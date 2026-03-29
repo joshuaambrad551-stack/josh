@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukidnon Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/index_style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <img src="image/logo.png" alt="Bukidnon Logo" class="logo">
+        <div class="header-text">
+            <p class="header-sub">REPUBLIC OF THE PHILIPPINES</p>
+            <h1 class="header-title">PROVINCIAL GOVERNMENT OF BUKIDNON</h1>
+        </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- NAV -->
+<nav id="mainNav">
+    
+    <ul class="nav-list nav-right">
+
+        <li class="nav-item nav-right-label">
+            <span class="nav-section-label">Communal Ranch</span>
+        </li>
+
+        <li class="nav-item">
+            <a href="communal-ranch-overview.html" class="nav-link nav-link-right">
+                🏔️ Overview
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="Ranch-horsebackriding.html" class="nav-link nav-link-right">
+                🪂 Horseback Riding Experience 
+            </a>
+            
+        </li>
+
+        <li class="nav-item">
+            <a href="Ranch-Time-to-Visit.html" class="nav-link nav-link-right">
+            ️ Best Time and Visit
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="Ranch-Travel-Guide
+.html" class="nav-link nav-link-right">
+            Travel Guide
+            </a>
+        </li>
+
+    </ul>
+
+     <ul class="nav-list nav-right">
+
+    <!-- ADD THIS -->
+    <li class="nav-item">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+    </li>
+
+</ul>
+
+</nav>
+
+
+ <section class="slider" id="slider">
+    <div class="slider-label">EXPLORE DAHILAYAN ADVENTURE PARK</div>
+    <div class="slide-track">
+        <img src="image/communal1.jpg" alt="Bukidnon">
+        <img src="image/communal2.jpg" alt="Bukidnon">
+        <img src="image/communal3.jpg" alt="Bukidnon">
+        <img src="image/communal4.jpg" alt="Bukidnon">
+        <img src="image/communal5.jpg" alt="Bukidnon">
+    </div>
+</section>
+
+<!-- Container -->
+<div style="max-width: 1000px; margin: 0 auto; padding: 40px; background-color: #fff; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+
+  <!-- Title -->
+  <p style="font-size: 80px; font-weight: bold; color: green; text-align: center; margin-bottom: 40px;">
+    Communal Ranch Overview
+  </p>
+
+  <!-- Overview Text -->
+  <p style="font-size: 24px; line-height: 1.8;">
+    The Communal Ranch is a vast open space designed to showcase sustainable farming and ranching practices. Visitors can explore lush pastures, interact with farm animals, and learn about communal livestock management. The ranch promotes agricultural education while offering a peaceful retreat for families and tourists.
+  </p>
+
+  <p style="font-size: 24px; line-height: 1.8;">
+    Facilities include animal pens, grazing areas, walking trails, and an observation deck for viewing ranch activities. Seasonal workshops and demonstrations provide hands-on experiences in ranch management, farming techniques, and eco-friendly practices.
+  </p>
+
+  <p style="font-size: 24px; line-height: 1.8;">
+    Whether you are a student, a tourist, or a local resident, the Communal Ranch offers a unique opportunity to connect with nature, learn about sustainable agriculture, and enjoy outdoor recreation in a scenic environment.
+  </p>
+
+</div>
+
+<!-- FESTIVAL -->
+<section class="festival">
+    <div class="festival-inner">
+        <div class="festival-badge">2025</div>
+        <h2 class="festival-title">KAAMULAN FESTIVAL</h2>
+        <p class="festival-dates">March 21 – April 23</p>
+        <div class="festival-divider"></div>
+        <p class="festival-body">
+            Experience the vibrant culture of Bukidnon! <strong>Celebrity Night on April 13</strong> featuring
+            <strong>TJ Monterde &amp; KZ Tandingan</strong>. Celebrate the rich traditions of
+            Bukidnon's seven indigenous groups — Higaonon, Manobo, Matigsalug, Talaandig, Tigwahanon, and Umayamnon.
+            Don't miss the colorful festivities, cultural performances, and a showcase of indigenous heritage!
+        </p>
+        <div class="festival-tags">
+            <span>#Kaamulan2025</span>
+            <span>#Bukidnon</span>
+            <span>#CulturalFestival</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-section">
+        <h3>REPUBLIC OF THE PHILIPPINES</h3>
+        <p>All content is in the public domain unless otherwise stated.</p>
+    </div>
+    <div class="footer-section">
+        <h3>ABOUT GOVPH</h3>
+        <p>Learn more about the Philippine government, its structure, how government works and the people behind it.</p>
+    </div>
+    <div class="footer-section">
+        <h3>GOV.PH</h3>
+        <p>
+            <a href="https://data.gov.ph/" target="_blank">Open Data Portal</a><br>
+            <a href="https://www.officialgazette.gov.ph/" target="_blank">Official Gazette</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

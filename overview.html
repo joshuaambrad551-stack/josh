@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukidnon Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/index_style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <img src="image/logo.png" alt="Bukidnon Logo" class="logo">
+        <div class="header-text">
+            <p class="header-sub">REPUBLIC OF THE PHILIPPINES</p>
+            <h1 class="header-title">PROVINCIAL GOVERNMENT OF BUKIDNON</h1>
+        </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- NAV -->
+<nav id="mainNav">
+ 
+    <!-- RIGHT: Dahilayan quick-links -->
+    <ul class="nav-list nav-right">
+
+        <li class="nav-item nav-right-label">
+            <span class="nav-section-label">Dahilayan</span>
+        </li>
+
+        <li class="nav-item">
+            <a href="overview.html" class="nav-link nav-link-right">
+                🏔️ Overview
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-activities.html" class="nav-link nav-link-right">
+                🪂 Activities <span class="chevron">&#8964;</span>
+            </a>
+            <ul class="dropdown dropdown-left">
+                <li><a href="dahilayan-activities.html#zipline">Zipline</a></li>
+                <li><a href="dahilayan-activities.html#atv">ATV</a></li>
+                <li><a href="dahilayan-activities.html#dropzone">Dropzone</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-fees.html" class="nav-link nav-link-right">
+                🎟️ Fees &amp; Schedule
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-food.html" class="nav-link nav-link-right">
+                🍽️ Food &amp; Restaurants
+            </a>
+        </li>
+
+    </ul>
+
+     <ul class="nav-list nav-right">
+
+    <!-- ADD THIS -->
+    <li class="nav-item">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+    </li>
+
+</ul>
+
+</nav>
+
+
+ <section class="slider" id="slider">
+    <div class="slider-label">EXPLORE DAHILAYAN ADVENTURE PARK</div>
+    <div class="slide-track">
+        <img src="image/dahilayan1.jpg" alt="Bukidnon">
+        <img src="image/dahilayan2.jpg" alt="Bukidnon">
+        <img src="image/dahilayan3.jpg" alt="Bukidnon">
+        <img src="image/dahilayan4.jpg" alt="Bukidnon">
+        <img src="image/dahilayan5.jpg" alt="Bukidnon">
+    </div>
+</section>
+
+<div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 20px; line-height: 1.6; padding: 20px;">
+  
+  <ul style="list-style-position: inside; padding: 0;">
+    
+    <li>
+      <span style="color: green; font-weight: bold;">Dahilayan Adventure Park</span> is a top tourist destination in Bukidnon, known for its 
+      <span style="color: green;">thrilling outdoor activities</span> and cool mountain climate.
+    </li>
+    
+    <li>
+      Located at the foot of the 
+      <span style="color: green; font-weight: bold;">Mount Kitanglad Range</span>, it offers a refreshing escape surrounded by 
+      <span style="color: green;">pine trees</span> and scenic views.
+    </li>
+    
+    <li>
+      The park is famous for its 
+      <span style="color: green;">extreme rides</span>, including 
+      <span style="color: green;">Asia’s longest dual zipline</span>, where visitors can experience high-speed adventure.
+    </li>
+    
+    <li>
+      It also features attractions like 
+      <span style="color: green;">Dropzone</span>, 
+      <span style="color: green;">Mountain Coaster</span>, and 
+      <span style="color: green;">Rollerzip</span>, making it perfect for both thrill-seekers and families.
+    </li>
+    
+    <li>
+      With its mix of 
+      <span style="color: green;">adventure and nature</span>, Dahilayan Adventure Park is a must-visit destination for anyone exploring Bukidnon.
+    </li>
+    
+  </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-section">
+        <h3>REPUBLIC OF THE PHILIPPINES</h3>
+        <p>All content is in the public domain unless otherwise stated.</p>
+    </div>
+    <div class="footer-section">
+        <h3>ABOUT GOVPH</h3>
+        <p>Learn more about the Philippine government, its structure, how government works and the people behind it.</p>
+    </div>
+    <div class="footer-section">
+        <h3>GOV.PH</h3>
+        <p>
+            <a href="https://data.gov.ph/" target="_blank">Open Data Portal</a><br>
+            <a href="https://www.officialgazette.gov.ph/" target="_blank">Official Gazette</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

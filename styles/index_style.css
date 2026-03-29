@@ -1,0 +1,501 @@
+/* ─── CSS VARIABLES ─────────────────────────────────────── */
+:root {
+    --gold:        #ccbc52;
+    --gold-dark:   #a89c38;
+    --gold-light:  #e8da7a;
+    --black:       #111111;
+    --dark:        #1a1a1a;
+    --mid:         #2e2e2e;
+    --white:       #ffffff;
+    --off-white:   #fafaf5;
+    --text-muted:  #888;
+    --font-display: 'Cinzel', serif;
+    --font-body:    'Lato', sans-serif;
+    --nav-h:        52px;
+    --header-h:     80px;
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--dark);
+}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    padding: 0 32px;
+    background: var(--white);
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+}
+
+.header-sub {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.header-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--black);
+    line-height: 1.3;
+}
+
+/* ─── HAMBURGER (mobile) ─────────────────────────────────── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── NAV SHELL ──────────────────────────────────────────── */
+nav {
+    background: var(--dark);
+    border-bottom: 3px solid var(--gold);
+    position: sticky;
+    top: var(--header-h);
+    z-index: 1100;
+
+    /* makes left + right lists sit at opposite ends */
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/* ─── NAV LISTS ──────────────────────────────────────────── */
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* left group – normal flow */
+.nav-left  { flex: 1; }
+
+/* right group – pushed to the far right, has a left separator */
+.nav-right {
+    border-left: 1px solid rgba(255,255,255,.10);
+}
+
+/* ─── NAV ITEMS ──────────────────────────────────────────── */
+.nav-item { position: relative; }
+
+/* shared link style */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 18px;
+    height: var(--nav-h);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+}
+
+.nav-link:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* right-side links get a subtly different tint so they read as secondary */
+.nav-link-right {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ccc;
+    padding: 0 14px;
+}
+
+.nav-link-right:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* "Dahilayan" label pill */
+.nav-right-label {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 14px;
+    pointer-events: none;
+}
+
+.nav-section-label {
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(204,188,82,.12);
+    border: 1px solid rgba(204,188,82,.35);
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+}
+
+/* chevron rotate on hover */
+.chevron { font-size: 14px; transition: transform .3s; }
+.nav-item:hover .chevron { transform: rotate(180deg); }
+
+/* ─── DROPDOWN ───────────────────────────────────────────── */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    min-width: 220px;
+    background: var(--mid);
+    border-top: 3px solid var(--gold);
+    list-style: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    z-index: 999;
+    animation: dropIn .2s ease;
+}
+
+/* Activities dropdown from right side – open to the LEFT so it doesn't overflow */
+.dropdown-left {
+    left: auto;
+    right: 0;
+}
+
+.nav-item:hover .dropdown { display: block; }
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: .5px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    transition: background .2s, color .2s, padding-left .2s;
+}
+.dropdown li:last-child a { border-bottom: none; }
+.dropdown li a:hover {
+    background: var(--gold);
+    color: var(--black);
+    padding-left: 28px;
+    font-weight: 700;
+}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.15) 0%,
+        rgba(0,0,0,.55) 60%,
+        rgba(0,0,0,.75) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.hero-tagline {
+    font-family: var(--font-body);
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+    opacity: .9;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 8vw, 90px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    letter-spacing: 6px;
+    text-shadow: 0 4px 30px rgba(0,0,0,.6);
+}
+
+.hero-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 28px auto;
+    border-radius: 2px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 42px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background .25s, transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(204,188,82,.4);
+}
+.hero-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(204,188,82,.55);
+}
+
+/* ─── SLIDER ─────────────────────────────────────────────── */
+.slider {
+    overflow: hidden;
+    background: var(--black);
+}
+
+.slider-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-align: center;
+    padding: 22px 0 16px;
+    text-transform: uppercase;
+    background: var(--black);
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 24s linear infinite;
+    width: max-content;
+}
+
+.slide-track img {
+    width: 340px;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    border-right: 4px solid var(--black);
+    flex-shrink: 0;
+    transition: filter .3s;
+}
+
+/* ─── FESTIVAL ───────────────────────────────────────────── */
+.festival {
+    background: var(--off-white);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.festival::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+}
+.festival-inner { max-width: 700px; margin: auto; }
+
+.festival-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 4px;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+}
+
+.festival-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--black);
+}
+
+.festival-dates {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--gold-dark);
+    margin-top: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.festival-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 24px auto;
+    border-radius: 2px;
+}
+
+.festival-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.festival-tags {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.festival-tags span {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 48px 32px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 24px;
+    border-top: 4px solid var(--gold);
+}
+.footer-section { max-width: 280px; }
+.footer h3 {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.footer p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #aaa;
+}
+.footer a { color: #ccc; text-decoration: none; transition: color .2s; }
+.footer a:hover { color: var(--gold); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .header { padding: 0 18px; }
+    .header-title { font-size: 11px; }
+    .hamburger { display: flex; }
+
+    nav {
+        display: block;          /* stack vertically on mobile */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s ease;
+        position: static;
+    }
+    nav.open { max-height: 800px; }
+
+    .nav-list { flex-direction: column; }
+    .nav-right { border-left: none; border-top: 1px solid rgba(255,255,255,.10); }
+
+    .nav-section-label { display: none; }   /* hide label on mobile */
+    .nav-right-label   { display: none; }
+
+    .nav-link,
+    .nav-link-right { height: 46px; font-size: 11px; color: var(--white); padding: 0 18px; }
+
+    .dropdown, .dropdown-left {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        background: #222;
+        display: none;
+        animation: none;
+    }
+    .nav-item.open .dropdown,
+    .nav-item.open .dropdown-left { display: block; }
+
+    .slide-track img { width: 240px; height: 180px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { letter-spacing: 3px; }
+    .festival { padding: 50px 16px; }
+}

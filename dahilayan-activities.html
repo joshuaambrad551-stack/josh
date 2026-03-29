@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukidnon Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/index_style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <img src="image/logo.png" alt="Bukidnon Logo" class="logo">
+        <div class="header-text">
+            <p class="header-sub">REPUBLIC OF THE PHILIPPINES</p>
+            <h1 class="header-title">PROVINCIAL GOVERNMENT OF BUKIDNON</h1>
+        </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- NAV -->
+<nav id="mainNav">
+    
+    <!-- RIGHT: Dahilayan quick-links -->
+    <ul class="nav-list nav-right">
+
+        <li class="nav-item nav-right-label">
+            <span class="nav-section-label">Dahilayan</span>
+        </li>
+
+        <li class="nav-item">
+            <a href="overview.html" class="nav-link nav-link-right">
+                🏔️ Overview
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-activities.html" class="nav-link nav-link-right">
+                🪂 Activities <span class="chevron">&#8964;</span>
+            </a>
+            <ul class="dropdown dropdown-left">
+                <li><a href="dahilayan-activities.html#zipline">Zipline</a></li>
+                <li><a href="dahilayan-activities.html#atv">ATV</a></li>
+                <li><a href="dahilayan-activities.html#dropzone">Dropzone</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-fees.html" class="nav-link nav-link-right">
+                🎟️ Fees &amp; Schedule
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="dahilayan-food.html" class="nav-link nav-link-right">
+                🍽️ Food &amp; Restaurants
+            </a>
+        </li>
+
+    </ul>
+
+     <ul class="nav-list nav-right">
+
+    <!-- ADD THIS -->
+    <li class="nav-item">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+    </li>
+
+</ul>
+
+</nav>
+
+
+ <section class="slider" id="slider">
+    <div class="slider-label">EXPLORE DAHILAYAN ADVENTURE PARK</div>
+    <div class="slide-track">
+        <img src="image/dahilayan1.jpg" alt="Bukidnon">
+        <img src="image/dahilayan2.jpg" alt="Bukidnon">
+        <img src="image/dahilayan3.jpg" alt="Bukidnon">
+        <img src="image/dahilayan4.jpg" alt="Bukidnon">
+        <img src="image/dahilayan5.jpg" alt="Bukidnon">
+    </div>
+</section>
+
+<div style="max-width: 900px; margin: 0 auto; text-align: center; padding: 20px; font-family: Arial;">
+
+  <ul style="list-style: none; padding: 0; font-size: 20px; line-height: 1.6;">
+
+    <li style="margin-bottom: 30px;">
+      <div style="font-size: 50px; font-weight: bold;">
+        Zipline
+      </div>
+      Experience one of the park’s most famous attractions—the 
+      <span style="color: green; font-weight: bold;">840-meter dual zipline</span>, 
+      known as one of the longest in Asia. Riders are launched from high elevation and 
+      “fly” across the forest at speeds of 
+      <span style="color: green; font-weight: bold;">60–90 kph</span>, 
+      offering breathtaking views of the mountains and lush greenery.
+    </li>
+
+    <li style="margin-bottom: 30px;">
+      <div style="font-size: 50px; font-weight: bold;">
+        ATV Ride
+      </div>
+      The ATV (All-Terrain Vehicle) ride lets visitors explore 
+      <span style="color: green; font-weight: bold;">rugged trails</span> 
+      and natural surroundings. It is perfect for adventure lovers who want an 
+      <span style="color: green; font-weight: bold;">off-road experience</span> 
+      while enjoying the scenic landscape of Bukidnon.
+    </li>
+
+    <li style="margin-bottom: 30px;">
+      <div style="font-size: 50px; font-weight: bold;">
+        Dropzone
+      </div>
+      The Dropzone is a 
+      <span style="color: green; font-weight: bold;">120-foot freefall ride</span> 
+      that swings riders like a giant pendulum over a man-made lake. It gives an 
+      <span style="color: green; font-weight: bold;">intense adrenaline rush</span> 
+      as you drop and swoop close to the water.
+    </li>
+
+  </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-section">
+        <h3>REPUBLIC OF THE PHILIPPINES</h3>
+        <p>All content is in the public domain unless otherwise stated.</p>
+    </div>
+    <div class="footer-section">
+        <h3>ABOUT GOVPH</h3>
+        <p>Learn more about the Philippine government, its structure, how government works and the people behind it.</p>
+    </div>
+    <div class="footer-section">
+        <h3>GOV.PH</h3>
+        <p>
+            <a href="https://data.gov.ph/" target="_blank">Open Data Portal</a><br>
+            <a href="https://www.officialgazette.gov.ph/" target="_blank">Official Gazette</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukidnon Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/index_style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <img src="image/logo.png" alt="Bukidnon Logo" class="logo">
+        <div class="header-text">
+            <p class="header-sub">REPUBLIC OF THE PHILIPPINES</p>
+            <h1 class="header-title">PROVINCIAL GOVERNMENT OF BUKIDNON</h1>
+        </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- NAV -->
+<nav id="mainNav">
+    <!-- LEFT: main links -->
+    <ul class="nav-list nav-left">
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">About <span class="chevron">&#8964;</span></a>
+            <ul class="dropdown">
+                <li><a href="https://en.wikipedia.org/wiki/Bukidnon" target="_blank">Quick Facts</a></li>
+                <li><a href="https://bukidnon.gov.ph/general-information/" target="_blank">General Info</a></li>
+                <li><a href="https://bukidnon.gov.ph/history/" target="_blank">History</a></li>
+                <li><a href="https://www.tourism.gov.ph/" target="_blank">Arts &amp; Culture</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">Governance <span class="chevron">&#8964;</span></a>
+            <ul class="dropdown">
+                <li><a href="https://bukidnon.gov.ph/mission-vision/" target="_blank">Mission &amp; Vision</a></li>
+                <li><a href="https://bukidnon.gov.ph/cities-and-municipalities/" target="_blank">Cities &amp; Municipalities</a></li>
+                <li><a href="https://bukidnon.gov.ph/" target="_blank">Provincial Government</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">Tourism <span class="chevron">&#8964;</span></a>
+            <ul class="dropdown">
+                <li><a href="dahilayan-overview.html">Dahilayan Adventure Park</a></li>
+                <li><a href="ranch-overview.html">Communal Ranch</a></li>
+                <li><a href="Camp-Philips.html">Camp Philips (Manolo Fortich)</a></li>
+                <li><a href="lakeapo-overview.html">Lake Apo</a></li>
+                <li><a href="capistrano-overview.html">Mt. Capistrano</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="image/bukidnon1.jpg" alt="Bukidnon" class="hero-img">
+    <div class="hero-overlay">
+        <p class="hero-tagline">Discover the Heart of Mindanao</p>
+        <h1 class="hero-title">WELCOME TO<br>BUKIDNON</h1>
+        <div class="hero-divider"></div>
+        <a href="#slider" class="hero-btn">Explore Now</a>
+    </div>
+</section>
+
+<!-- PHOTO SLIDER -->
+<section class="slider" id="slider">
+    <div class="slider-label">EXPLORE BUKIDNON</div>
+    <div class="slide-track">
+        <img src="image/bukidnon2.jpg" alt="Bukidnon">
+        <img src="image/bukidnon3.jpg" alt="Bukidnon">
+        <img src="image/bukidnon4.jpg" alt="Bukidnon">
+        <img src="image/bukidnon5.jpg" alt="Bukidnon">
+        <img src="image/bukidnon2.jpg" alt="Bukidnon">
+        <img src="image/bukidnon3.jpg" alt="Bukidnon">
+        <img src="image/bukidnon4.jpg" alt="Bukidnon">
+        <img src="image/bukidnon5.jpg" alt="Bukidnon">
+    </div>
+</section>
+
+<!-- FESTIVAL -->
+<section class="festival">
+    <div class="festival-inner">
+        <div class="festival-badge">2025</div>
+        <h2 class="festival-title">KAAMULAN FESTIVAL</h2>
+        <p class="festival-dates">March 21 – April 23</p>
+        <div class="festival-divider"></div>
+        <p class="festival-body">
+            Experience the vibrant culture of Bukidnon! <strong>Celebrity Night on April 13</strong> featuring
+            <strong>TJ Monterde &amp; KZ Tandingan</strong>. Celebrate the rich traditions of
+            Bukidnon's seven indigenous groups — Higaonon, Manobo, Matigsalug, Talaandig, Tigwahanon, and Umayamnon.
+            Don't miss the colorful festivities, cultural performances, and a showcase of indigenous heritage!
+        </p>
+        <div class="festival-tags">
+            <span>#Kaamulan2025</span>
+            <span>#Bukidnon</span>
+            <span>#CulturalFestival</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-section">
+        <h3>REPUBLIC OF THE PHILIPPINES</h3>
+        <p>All content is in the public domain unless otherwise stated.</p>
+    </div>
+    <div class="footer-section">
+        <h3>ABOUT GOVPH</h3>
+        <p>Learn more about the Philippine government, its structure, how government works and the people behind it.</p>
+    </div>
+    <div class="footer-section">
+        <h3>GOV.PH</h3>
+        <p>
+            <a href="https://data.gov.ph/" target="_blank">Open Data Portal</a><br>
+            <a href="https://www.officialgazette.gov.ph/" target="_blank">Official Gazette</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
